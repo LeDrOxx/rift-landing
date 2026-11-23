@@ -21,3 +21,10 @@ sips -s format jpeg -s formatOptions 82 -Z 1310 shot.png --out ../../public/asse
 ```
 
 Afterwards: `rift revoke <device id>`, delete `.token`, and `rm -rf ~/Workspace/shop` if you like.
+
+## Anthropic policy (keep screenshots compliant)
+
+- No plan name or plan usage in shots: the mock hides them by default (`DEMO_SHOW_PLAN=1` brings them back for internal testing only).
+- Don't show Claude Code's mascot or logo: the app's chat avatar must be masked in any chat screenshot.
+- Wording on the site: "runs Claude Code" in plain text only; no subscription, plan or "no API key" claims until Anthropic Sales approves.
+  Sources: code.claude.com/docs/en/legal-and-compliance and code.claude.com/docs/en/agent-sdk/overview.

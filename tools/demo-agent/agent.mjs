@@ -208,7 +208,10 @@ const pending = {
   ],
 };
 
-const usage = () => ({
+// Screenshots show no plan name or plan usage (see README: Anthropic branding/auth policy).
+// Set DEMO_SHOW_PLAN=1 to bring them back for internal testing.
+const SHOW_PLAN = process.env.DEMO_SHOW_PLAN === '1';
+const usage = () => (!SHOW_PLAN ? { available: false, windows: [], fetchedAt: now() } : {
   available: true,
   subscription: 'max',
   extraUsageEnabled: false,
@@ -246,7 +249,7 @@ function overrideHello(up) {
   return {
     ...rest,
     host: { ...(up.host ?? {}), name: 'MacBook Pro' },
-    account: { subscriptionType: 'Max', apiProvider: 'firstParty', email: 'sam@example.com', ok: true },
+    account: SHOW_PLAN ? { subscriptionType: 'Max', apiProvider: 'firstParty', email: 'sam@example.com', ok: true } : { ok: true },
     quota: { status: 'ok' },
     settings: demoSettings,
     claude: 'ready',
