@@ -138,6 +138,28 @@
     .cap { margin: 0; max-width: 330px; text-align: center; color: var(--muted); font-size: 14px; min-height: 3em; }
     @media (max-width: 380px) { .phone { width: 280px; } }
 
+    .tabs { flex-wrap: wrap; justify-content: center; max-width: 100%; }
+
+    /* Spotlights (terminal, git) */
+    .spot { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
+    .spot.rev .spot-media { order: -1; }
+    @media (max-width: 900px) { .spot { grid-template-columns: 1fr; gap: 40px; } .spot.rev .spot-media { order: 0; } }
+    .spot h2 { margin-bottom: 14px; }
+    .spot .intro { color: var(--muted); font-size: 17px; margin: 0 0 24px; }
+    .spot-media { display: flex; justify-content: center; align-items: flex-start; gap: 22px; }
+    .frame { width: 290px; flex: none; border-radius: 48px; padding: 10px; background: linear-gradient(160deg, #2b2240, #15101f); box-shadow: 0 40px 80px -30px #6e72bd80, 0 0 0 1px #3a2f55 inset; }
+    .frame img { display: block; width: 100%; height: auto; border-radius: 39px; }
+    .spot-media.pair .frame { width: 250px; }
+    .spot-media.pair .frame:nth-child(2) { margin-top: 56px; }
+    @media (max-width: 600px) { .frame { width: 260px; } .spot-media.pair .frame { width: 46%; border-radius: 30px; padding: 6px; } .spot-media.pair .frame img { border-radius: 25px; } .spot-media.pair .frame:nth-child(2) { margin-top: 32px; } }
+    .ticks { list-style: none; margin: 0; padding: 0; display: grid; gap: 12px; }
+    .ticks li { position: relative; padding-left: 30px; color: var(--muted); font-size: 15.5px; }
+    .ticks li b { color: var(--text); font-weight: 600; }
+    .ticks li::before { content: ""; position: absolute; left: 0; top: 3px; width: 18px; height: 18px; border-radius: 6px; background: #6e72bd2e url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23c9c3ff' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 12 4 4 8-8'/%3E%3C/svg%3E") center / 12px no-repeat; }
+    .ticks.two { grid-template-columns: 1fr 1fr; gap: 12px 26px; }
+    @media (max-width: 600px) { .ticks.two { grid-template-columns: 1fr; } }
+    .note { margin: 22px 0 0; font-size: 13.5px; color: var(--dim); }
+
     /* Screens gallery */
     .shots { display: grid; grid-template-columns: repeat(4, 1fr); gap: 22px; }
     @media (max-width: 960px) { .shots { grid-template-columns: repeat(2, 1fr); } }
@@ -238,10 +260,10 @@
   <div class="wrap nav">
     <a href="#" class="logo"><img src="/assets/icon.svg" alt="" />Rift</a>
     <nav class="nav-links" aria-label="Main">
+      <a href="#terminal">Terminal</a>
+      <a href="#git">Git</a>
       <a href="#features">Features</a>
-      <a href="#screens">Screens</a>
       <a href="#how">How it works</a>
-      <a href="#platforms">Platforms</a>
       <a href="#security">Security</a>
       <a href="#faq">FAQ</a>
     </nav>
@@ -257,9 +279,9 @@
         <div class="pill"><span class="dot"></span>Coming soon to iPhone and Android</div>
         <h1>Code on your Mac<br /><span class="soft">from your phone.</span></h1>
         <p class="lede">
-          Chat with <strong>Claude Code</strong>, review what changed, and watch and control
-          <strong>iOS simulators, Android emulators and web previews</strong> live, from any network.
-          Your Mac can stay locked.
+          Chat with <strong>Claude Code</strong>, run commands in a <strong>real terminal</strong>,
+          manage <strong>git</strong>, and control <strong>iOS simulators, Android emulators and web previews</strong>
+          live, from any network. Your Mac can stay locked.
         </p>
         <div class="cta-row">
           <a href="mailto:mohamed@riftassistant.com?subject=Rift%20early%20access" class="btn btn-primary">
@@ -284,7 +306,8 @@
       <div class="demo">
         <div class="tabs" role="tablist" aria-label="App screens">
           <button class="tab" role="tab" aria-selected="true" data-pane="chat">Chat</button>
-          <button class="tab" role="tab" aria-selected="false" data-pane="changes">Changes</button>
+          <button class="tab" role="tab" aria-selected="false" data-pane="terminal">Terminal</button>
+          <button class="tab" role="tab" aria-selected="false" data-pane="git">Git</button>
           <button class="tab" role="tab" aria-selected="false" data-pane="device">Device</button>
           <button class="tab" role="tab" aria-selected="false" data-pane="preview">Preview</button>
         </div>
@@ -292,7 +315,8 @@
           <div class="screen">
             <div class="island" aria-hidden="true"></div>
             <img class="on" data-shot="chat" src="/assets/screens/chat-approve.jpg" width="603" height="1310" alt="Rift chat: Claude finished a change and asks for approval before running a command" />
-            <img data-shot="changes" src="/assets/screens/changes.jpg" width="603" height="1310" loading="lazy" alt="Rift Changes tab listing modified files with lines added and removed" />
+            <img data-shot="terminal" src="/assets/screens/terminal.jpg" width="603" height="1310" loading="lazy" alt="Rift terminal running git status and npm test on the Mac" />
+            <img data-shot="git" src="/assets/screens/graph.jpg" width="603" height="1310" loading="lazy" alt="Rift git graph with branches, a merge and a tag" />
             <img data-shot="device" src="/assets/screens/device.jpg" width="603" height="1310" loading="lazy" alt="Rift Device tab streaming a live Android emulator" />
             <img data-shot="preview" src="/assets/screens/browser.jpg" width="603" height="1310" loading="lazy" alt="Rift Browser preview of a local dev server at laptop size" />
           </div>
@@ -311,12 +335,62 @@
     </div>
   </div>
 
+  <!-- ================= TERMINAL ================= -->
+  <section id="terminal">
+    <div class="wrap spot">
+      <div>
+        <p class="eyebrow">Terminal</p>
+        <h2>A real terminal on your Mac, in your pocket</h2>
+        <p class="intro">When a button isn't enough, open a shell. It's your own terminal running on your computer, not a cloud sandbox.</p>
+        <ul class="ticks">
+          <li><b>Your shell, your setup.</b> zsh or bash on macOS, PowerShell on Windows, with your PATH and tools.</li>
+          <li><b>Up to 6 terminals.</b> They keep running when you close the app.</li>
+          <li><b>Pick up where you left off.</b> Reopen a terminal and its recent output is still there.</li>
+          <li><b>Keys you need on a phone:</b> esc, tab, ctrl and arrows, one tap away.</li>
+          <li><b>Anything you'd type at your desk:</b> tests, installs, scripts, git, deploys.</li>
+        </ul>
+      </div>
+      <div class="spot-media">
+        <div class="frame"><img src="/assets/screens/terminal.jpg" width="603" height="1310" loading="lazy" alt="Rift terminal on a phone running git status and npm test on the Mac" /></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= GIT ================= -->
+  <section id="git" class="alt">
+    <div class="wrap spot rev">
+      <div>
+        <p class="eyebrow">Git</p>
+        <h2>Full git, not just a diff viewer</h2>
+        <p class="intro">Review what changed, then do the real work: branch, merge, rebase, fix history and push. Every action is a tap and uses no Claude quota.</p>
+        <ul class="ticks two">
+          <li><b>Live graph</b> of branches, tags and remotes</li>
+          <li><b>Full-file diffs</b> with word-level highlights</li>
+          <li><b>Branches and tags:</b> check out, create, rename, delete</li>
+          <li><b>Merge, rebase,</b> cherry-pick and revert</li>
+          <li><b>Commit and push,</b> including force-with-lease</li>
+          <li><b>Fetch and pull</b> from your remotes</li>
+          <li><b>Stash</b>, apply and drop</li>
+          <li><b>Edit commit messages</b> on your branch</li>
+          <li><b>Safe resets:</b> a hard reset stashes your work first</li>
+          <li><b>Conflicts:</b> continue or abort a stopped merge or rebase</li>
+          <li><b>Discard a file</b>, with undo</li>
+          <li><b>See what one prompt changed</b>, apart from the rest</li>
+        </ul>
+      </div>
+      <div class="spot-media pair">
+        <div class="frame"><img src="/assets/screens/git-actions.jpg" width="603" height="1310" loading="lazy" alt="Rift commit actions: check out, new branch, new tag, merge, revert, reset, rename and delete" /></div>
+        <div class="frame"><img src="/assets/screens/diff.jpg" width="603" height="1310" loading="lazy" alt="Rift full-file diff with added and removed lines and word-level highlights" /></div>
+      </div>
+    </div>
+  </section>
+
   <!-- ================= FEATURES ================= -->
   <section id="features">
     <div class="wrap">
       <div class="head">
-        <p class="eyebrow">Features</p>
-        <h2>Your whole dev loop, in your pocket</h2>
+        <p class="eyebrow">More features</p>
+        <h2>The rest of your dev loop, in your pocket</h2>
         <p>Rift is a phone app plus a small agent on your computer. Ask Claude for a change, check the diff, watch it run, then commit, all from your phone.</p>
       </div>
 
@@ -330,17 +404,6 @@
             <li>Attach photos, PDFs and files</li>
             <li>Pick model, effort and permission mode</li>
             <li>Have replies read aloud</li>
-          </ul>
-        </div>
-
-        <div class="card">
-          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="2.5"/><circle cx="6" cy="18" r="2.5"/><circle cx="18" cy="12" r="2.5"/><path d="M6 8.5v7M8.3 7.2l7.4 3.6"/></svg></div>
-          <h3>Review changes and use git</h3>
-          <p>See every file Claude touched, including files changed by shell commands.</p>
-          <ul>
-            <li>Inline diffs</li>
-            <li>Git graph with branches, tags and history</li>
-            <li>Commit and push with one tap</li>
           </ul>
         </div>
 
@@ -373,7 +436,7 @@
           <ul>
             <li>Auto hot reload after Claude edits Dart files</li>
             <li>Detects Laravel, Django, Rails and <code>dev</code> scripts</li>
-            <li>Built-in terminal</li>
+            <li>Start, stop and read logs from the phone</li>
           </ul>
         </div>
 
@@ -385,6 +448,17 @@
             <li>Never resumes on its own</li>
             <li>Live plan usage and time to reset</li>
             <li>Buttons like run, diff and commit use no quota</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8a6 6 0 1 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.9 1.9 0 0 0 3.4 0"/></svg></div>
+          <h3>Know when Claude needs you</h3>
+          <p>Get a push notification when Claude asks for approval, finishes a task or hits your plan limit.</p>
+          <ul>
+            <li>Generic text only, never code or file paths</li>
+            <li>Mute them from the app or VS Code</li>
+            <li>Lock the app with Face ID or fingerprint</li>
           </ul>
         </div>
       </div>
@@ -402,8 +476,8 @@
       <div class="shots">
         <figure class="shot"><img src="/assets/screens/home.jpg" width="603" height="1310" loading="lazy" alt="Rift home screen with the Mac's battery, network, CPU and temperature, plus shortcuts and recent chats" /><figcaption><b>Home</b>Your Mac at a glance, plan usage and recent chats.</figcaption></figure>
         <figure class="shot"><img src="/assets/screens/chat-edits.jpg" width="603" height="1310" loading="lazy" alt="Rift chat showing Claude's file edits as inline diffs" /><figcaption><b>Edits as diffs</b>See exactly what Claude changed, line by line.</figcaption></figure>
-        <figure class="shot"><img src="/assets/screens/graph.jpg" width="603" height="1310" loading="lazy" alt="Rift git graph with branches, a merge and a tag" /><figcaption><b>Git graph</b>Branches, tags, merges, pull and push.</figcaption></figure>
-        <figure class="shot"><img src="/assets/screens/device.jpg" width="603" height="1310" loading="lazy" alt="Rift streaming a live Android emulator" /><figcaption><b>Live device</b>Control a simulator or emulator by touch.</figcaption></figure>
+        <figure class="shot"><img src="/assets/screens/changes.jpg" width="603" height="1310" loading="lazy" alt="Rift Changes tab listing modified files with lines added and removed" /><figcaption><b>Changes</b>Every file touched, ready to commit.</figcaption></figure>
+        <figure class="shot"><img src="/assets/screens/browser.jpg" width="603" height="1310" loading="lazy" alt="Rift web preview of a local dev server at laptop size" /><figcaption><b>Web preview</b>Your dev server at any screen size.</figcaption></figure>
       </div>
     </div>
   </section>
@@ -584,8 +658,9 @@
     <div class="foot">
       <span class="logo"><img src="/assets/icon.svg" alt="" />Rift</span>
       <nav aria-label="Footer">
+        <a href="#terminal">Terminal</a>
+        <a href="#git">Git</a>
         <a href="#features">Features</a>
-        <a href="#how">How it works</a>
         <a href="#security">Security</a>
         <a href="#faq">FAQ</a>
         <a href="mailto:mohamed@riftassistant.com">Contact</a>
@@ -599,7 +674,8 @@
 <script>
   var captions = {
     chat: 'Claude asks before it runs commands. Approve it from your phone.',
-    changes: 'Every file Claude touched, with lines added and removed. Commit right here.',
+    terminal: 'Your own shell on your Mac, with esc, tab, ctrl and arrow keys.',
+    git: 'Branches, tags and merges in a live graph. Pull and push in one tap.',
     device: 'A live Android emulator on your Mac, streamed to your phone. Touch works.',
     preview: 'Your dev server in Chrome on your Mac, at phone, tablet, laptop or desktop size.'
   };
