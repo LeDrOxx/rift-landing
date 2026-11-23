@@ -126,76 +126,25 @@
     }
     .tab[aria-selected="true"] { background: var(--card-2); color: var(--text); box-shadow: inset 0 0 0 1px var(--line); }
     .phone {
-      width: 330px; height: 660px; border-radius: 50px; padding: 12px;
+      width: 296px; border-radius: 50px; padding: 11px;
       background: linear-gradient(160deg, #2b2240, #15101f);
       box-shadow: 0 40px 80px -30px #6e72bd80, 0 0 0 1px #3a2f55 inset;
       position: relative;
     }
-    .screen { width: 100%; height: 100%; border-radius: 40px; background: #0b0812; overflow: hidden; display: flex; flex-direction: column; position: relative; }
-    .island { position: absolute; top: 10px; left: 50%; transform: translateX(-50%); width: 96px; height: 28px; border-radius: 20px; background: #000; z-index: 3; }
-    .status { height: 46px; display: flex; align-items: flex-end; justify-content: space-between; padding: 0 26px 6px; font-size: 12px; font-weight: 600; color: var(--muted); }
-    .appbar { display: flex; align-items: center; justify-content: space-between; padding: 8px 14px 10px; border-bottom: 1px solid var(--line-soft); font-size: 13px; }
-    .appbar b { font-weight: 600; }
-    .appbar .sub { font-size: 10.5px; color: var(--dim); font-family: var(--mono); }
-    .gauge { display: flex; align-items: center; gap: 6px; font-size: 10.5px; color: var(--muted); font-family: var(--mono); }
-    .gauge i { display: block; width: 46px; height: 5px; border-radius: 4px; background: #ffffff14; overflow: hidden; }
-    .gauge i::after { content: ""; display: block; width: 38%; height: 100%; background: var(--green); }
-    .pane { flex: 1; display: none; flex-direction: column; padding: 12px; gap: 9px; font-size: 12.5px; min-height: 0; }
-    .pane.on { display: flex; }
-    .bubble { padding: 9px 11px; border-radius: 14px; max-width: 88%; }
-    .bubble.me { align-self: flex-end; background: #6e72bd; color: #fff; border-bottom-right-radius: 4px; }
-    .bubble.ai { align-self: flex-start; background: var(--card); border: 1px solid var(--line); border-bottom-left-radius: 4px; color: #ddd6ea; }
-    .bubble code { font-size: 11px; }
-    .tool { font-family: var(--mono); font-size: 10.5px; padding: 7px 9px; border-radius: 10px; background: #08060d; border: 1px solid var(--line-soft); color: var(--muted); }
-    .tool .ok { color: var(--green); }
-    .approve { border: 1px solid #f0c36b55; background: #f0c36b12; border-radius: 12px; padding: 9px 10px; }
-    .approve .t { font-size: 11px; color: var(--amber); font-weight: 600; margin-bottom: 4px; }
-    .approve .cmd { font-family: var(--mono); font-size: 11px; color: var(--text); margin-bottom: 8px; }
-    .approve .row { display: flex; gap: 6px; }
-    .chip { font-size: 11px; padding: 5px 10px; border-radius: 8px; border: 1px solid var(--line); background: var(--card); color: var(--text); }
-    .chip.go { background: var(--brand); border-color: var(--brand); color: #fff; }
-    .composer { margin-top: auto; display: flex; align-items: center; gap: 8px; padding: 8px 10px; border-radius: 14px; background: var(--card); border: 1px solid var(--line); color: var(--dim); font-size: 12px; }
-    .composer span { flex: 1; }
-    .send { width: 26px; height: 26px; border-radius: 8px; background: var(--brand); display: grid; place-items: center; color: #fff; }
-    .send svg { width: 14px; height: 14px; }
+    .screen { position: relative; width: 100%; aspect-ratio: 1206 / 2622; border-radius: 40px; overflow: hidden; background: #16151c; }
+    .screen img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity .25s; }
+    .screen img.on { opacity: 1; }
+    .island { position: absolute; top: 9px; left: 50%; transform: translateX(-50%); width: 88px; height: 26px; border-radius: 20px; background: #000; z-index: 3; }
+    .cap { margin: 0; max-width: 330px; text-align: center; color: var(--muted); font-size: 14px; min-height: 3em; }
+    @media (max-width: 380px) { .phone { width: 280px; } }
 
-    .file { border: 1px solid var(--line); border-radius: 12px; background: var(--card); overflow: hidden; }
-    .file-h { display: flex; justify-content: space-between; padding: 7px 10px; font-family: var(--mono); font-size: 10.5px; color: var(--brand-soft); border-bottom: 1px solid var(--line-soft); }
-    .file-h .n { color: var(--dim); }
-    .diff { font-family: var(--mono); font-size: 10.5px; line-height: 1.55; padding: 6px 0; }
-    .diff div { padding: 0 10px; white-space: pre; overflow: hidden; text-overflow: ellipsis; }
-    .diff .a { background: #5fd3a01a; color: #9be8c3; }
-    .diff .d { background: #f2837f1a; color: #f7b0ad; }
-    .diff .c { color: var(--dim); }
-    .commit { margin-top: auto; display: flex; gap: 6px; }
-    .commit .chip { flex: 1; text-align: center; padding: 8px; }
-
-    .sim { flex: 1; border-radius: 22px; border: 1px solid var(--line); background: linear-gradient(180deg, #1c1a2e, #0f0d18); position: relative; overflow: hidden; display: flex; flex-direction: column; padding: 14px; gap: 10px; }
-    .sim .bar { height: 10px; width: 44%; border-radius: 6px; background: #ffffff1f; }
-    .sim .card { border-radius: 14px; background: #ffffff0d; border: 1px solid #ffffff12; padding: 12px; }
-    .sim .big { height: 64px; border-radius: 12px; background: linear-gradient(135deg, #6e72bd66, #b9a6f533); }
-    .sim .line { height: 8px; border-radius: 5px; background: #ffffff17; margin-top: 8px; }
-    .sim .cta { margin-top: auto; border-radius: 12px; background: #e2d5eb; color: #1b1227; text-align: center; font-weight: 700; font-size: 12px; padding: 10px; }
-    .touch { position: absolute; width: 34px; height: 34px; border-radius: 50%; border: 2px solid #fff9; background: #ffffff26; left: 58%; top: 70%; animation: tap 2.4s ease-in-out infinite; }
-    @keyframes tap { 0%,100% { transform: scale(.7); opacity: 0; } 30% { transform: scale(1); opacity: 1; } 60% { transform: scale(1.3); opacity: 0; } }
-    .controls { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; }
-    .controls .chip { text-align: center; }
-
-    .sizes { display: flex; gap: 4px; padding: 3px; border-radius: 9px; background: var(--card); border: 1px solid var(--line); font-size: 10.5px; }
-    .sizes span { padding: 3px 7px; border-radius: 6px; color: var(--dim); }
-    .sizes .on { background: var(--brand); color: #fff; }
-    .svc { display: flex; align-items: center; justify-content: space-between; padding: 8px 10px; border-radius: 12px; background: var(--card); border: 1px solid var(--line); font-size: 11.5px; }
-    .svc .s { display: flex; align-items: center; gap: 7px; }
-    .svc .s::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: var(--green); }
-    .svc .u { font-family: var(--mono); font-size: 10.5px; color: var(--dim); }
-    .web { flex: 1; border-radius: 14px; background: #f6f4fa; color: #1b1227; padding: 12px; display: flex; flex-direction: column; gap: 8px; overflow: hidden; }
-    .web .url { font-family: var(--mono); font-size: 10px; color: #6b6380; background: #e9e5f1; border-radius: 6px; padding: 4px 8px; }
-    .web .h { height: 14px; width: 70%; background: #1b1227; border-radius: 4px; }
-    .web .p { height: 7px; background: #cfc8dc; border-radius: 4px; }
-    .web .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; margin-top: 4px; }
-    .web .grid2 div { height: 56px; border-radius: 8px; background: #e2d5eb; }
-    .console { font-family: var(--mono); font-size: 10.5px; padding: 7px 9px; border-radius: 10px; background: #08060d; border: 1px solid var(--line-soft); color: var(--muted); }
-    .console .e { color: var(--red); }
+    /* Screens gallery */
+    .shots { display: grid; grid-template-columns: repeat(4, 1fr); gap: 22px; }
+    @media (max-width: 960px) { .shots { grid-template-columns: repeat(2, 1fr); } }
+    .shot { margin: 0; }
+    .shot img { display: block; width: 100%; height: auto; border-radius: 26px; border: 1px solid var(--line); box-shadow: 0 30px 60px -30px #6e72bd66; }
+    .shot figcaption { margin-top: 12px; font-size: 14px; color: var(--muted); }
+    .shot figcaption b { display: block; color: var(--text); font-size: 15px; }
 
     /* ---------- Sections ---------- */
     section { padding: 96px 0; }
@@ -290,6 +239,7 @@
     <a href="#" class="logo"><img src="/assets/icon.svg" alt="" />Rift</a>
     <nav class="nav-links" aria-label="Main">
       <a href="#features">Features</a>
+      <a href="#screens">Screens</a>
       <a href="#how">How it works</a>
       <a href="#platforms">Platforms</a>
       <a href="#security">Security</a>
@@ -338,86 +288,16 @@
           <button class="tab" role="tab" aria-selected="false" data-pane="device">Device</button>
           <button class="tab" role="tab" aria-selected="false" data-pane="preview">Preview</button>
         </div>
-        <div class="phone" aria-hidden="true">
+        <div class="phone">
           <div class="screen">
-            <div class="island"></div>
-            <div class="status"><span>9:41</span><span>●●● 5G</span></div>
-
-            <!-- Chat -->
-            <div class="pane on" id="pane-chat">
-              <div class="appbar" style="margin:-12px -12px 4px">
-                <div><b>shop_app</b><div class="sub">main · Claude Code</div></div>
-                <div class="gauge"><i></i>5h · 38%</div>
-              </div>
-              <div class="bubble me">Add a promo code field to the checkout sheet</div>
-              <div class="tool"><span class="ok">✓</span> Edit lib/checkout/sheet.dart <span style="color:var(--green)">+24</span> <span style="color:var(--red)">−3</span></div>
-              <div class="approve">
-                <div class="t">Claude wants to run</div>
-                <div class="cmd">flutter test test/checkout_test.dart</div>
-                <div class="row"><span class="chip go">Allow</span><span class="chip">Deny</span></div>
-              </div>
-              <div class="bubble ai">Done. The promo field validates on submit, and the app hot reloaded on the simulator.</div>
-              <div class="composer"><span>Ask Claude…</span><div class="send"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div></div>
-            </div>
-
-            <!-- Changes -->
-            <div class="pane" id="pane-changes">
-              <div class="appbar" style="margin:-12px -12px 4px">
-                <div><b>Changes</b><div class="sub">2 files · +27 −3</div></div>
-                <span class="sub">main ↑1</span>
-              </div>
-              <div class="file">
-                <div class="file-h"><span>lib/checkout/sheet.dart</span><span class="n">+24 −3</span></div>
-                <div class="diff">
-                  <div class="c">  Column(children: [</div>
-                  <div class="d">-   TotalRow(total),</div>
-                  <div class="a">+   PromoField(onApply: _apply),</div>
-                  <div class="a">+   TotalRow(total - discount),</div>
-                  <div class="c">  ]),</div>
-                </div>
-              </div>
-              <div class="file">
-                <div class="file-h"><span>test/checkout_test.dart</span><span class="n">+3</span></div>
-                <div class="diff">
-                  <div class="a">+ testWidgets('applies promo', …);</div>
-                </div>
-              </div>
-              <div class="commit"><span class="chip">History</span><span class="chip go">Commit &amp; push</span></div>
-            </div>
-
-            <!-- Device -->
-            <div class="pane" id="pane-device">
-              <div class="appbar" style="margin:-12px -12px 4px">
-                <div><b>iPhone 16 Pro</b><div class="sub">iOS Simulator · live</div></div>
-                <span class="sub" style="color:var(--green)">● streaming</span>
-              </div>
-              <div class="sim">
-                <div class="bar"></div>
-                <div class="card"><div class="big"></div><div class="line"></div><div class="line" style="width:60%"></div></div>
-                <div class="card"><div class="line" style="margin:0;width:50%"></div><div class="line"></div></div>
-                <div class="cta">Apply promo</div>
-                <div class="touch"></div>
-              </div>
-              <div class="controls"><span class="chip">Run</span><span class="chip go">Hot reload</span><span class="chip">Keyboard</span></div>
-            </div>
-
-            <!-- Preview -->
-            <div class="pane" id="pane-preview">
-              <div class="appbar" style="margin:-12px -12px 4px">
-                <div><b>Preview</b><div class="sub">Chrome on your Mac</div></div>
-                <div class="sizes"><span class="on">Phone</span><span>Tablet</span><span>Laptop</span></div>
-              </div>
-              <div class="svc"><span class="s">npm run dev</span><span class="u">localhost:5173</span></div>
-              <div class="web">
-                <div class="url">localhost:5173/pricing</div>
-                <div class="h"></div>
-                <div class="p"></div><div class="p" style="width:70%"></div>
-                <div class="grid2"><div></div><div></div></div>
-              </div>
-              <div class="console"><span class="e">✕</span> TypeError: plan is undefined <span style="color:var(--dim)">· Claude can read this</span></div>
-            </div>
+            <div class="island" aria-hidden="true"></div>
+            <img class="on" data-shot="chat" src="/assets/screens/chat-approve.jpg" width="603" height="1310" alt="Rift chat: Claude finished a change and asks for approval before running a command" />
+            <img data-shot="changes" src="/assets/screens/changes.jpg" width="603" height="1310" loading="lazy" alt="Rift Changes tab listing modified files with lines added and removed" />
+            <img data-shot="device" src="/assets/screens/device.jpg" width="603" height="1310" loading="lazy" alt="Rift Device tab streaming a live Android emulator" />
+            <img data-shot="preview" src="/assets/screens/browser.jpg" width="603" height="1310" loading="lazy" alt="Rift Browser preview of a local dev server at laptop size" />
           </div>
         </div>
+        <p class="cap" id="cap">Claude asks before it runs commands. Approve it from your phone.</p>
       </div>
     </div>
   </section>
@@ -507,6 +387,23 @@
             <li>Buttons like run, diff and commit use no quota</li>
           </ul>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= REAL SCREENS ================= -->
+  <section id="screens" style="padding-top:0">
+    <div class="wrap">
+      <div class="head">
+        <p class="eyebrow">The app</p>
+        <h2>Real screens, not mockups</h2>
+        <p>Captured from the Rift app running against a real project: real git history, a real dev server and a live emulator.</p>
+      </div>
+      <div class="shots">
+        <figure class="shot"><img src="/assets/screens/home.jpg" width="603" height="1310" loading="lazy" alt="Rift home screen with the Mac's battery, network, CPU and temperature, plus shortcuts and recent chats" /><figcaption><b>Home</b>Your Mac at a glance, plan usage and recent chats.</figcaption></figure>
+        <figure class="shot"><img src="/assets/screens/chat-edits.jpg" width="603" height="1310" loading="lazy" alt="Rift chat showing Claude's file edits as inline diffs" /><figcaption><b>Edits as diffs</b>See exactly what Claude changed, line by line.</figcaption></figure>
+        <figure class="shot"><img src="/assets/screens/graph.jpg" width="603" height="1310" loading="lazy" alt="Rift git graph with branches, a merge and a tag" /><figcaption><b>Git graph</b>Branches, tags, merges, pull and push.</figcaption></figure>
+        <figure class="shot"><img src="/assets/screens/device.jpg" width="603" height="1310" loading="lazy" alt="Rift streaming a live Android emulator" /><figcaption><b>Live device</b>Control a simulator or emulator by touch.</figcaption></figure>
       </div>
     </div>
   </section>
@@ -700,12 +597,18 @@
 </footer>
 
 <script>
+  var captions = {
+    chat: 'Claude asks before it runs commands. Approve it from your phone.',
+    changes: 'Every file Claude touched, with lines added and removed. Commit right here.',
+    device: 'A live Android emulator on your Mac, streamed to your phone. Touch works.',
+    preview: 'Your dev server in Chrome on your Mac, at phone, tablet, laptop or desktop size.'
+  };
   document.querySelectorAll('.tab').forEach(function (tab) {
     tab.addEventListener('click', function () {
-      document.querySelectorAll('.tab').forEach(function (t) { t.setAttribute('aria-selected', 'false'); });
-      document.querySelectorAll('.pane').forEach(function (p) { p.classList.remove('on'); });
-      tab.setAttribute('aria-selected', 'true');
-      document.getElementById('pane-' + tab.dataset.pane).classList.add('on');
+      var name = tab.dataset.pane;
+      document.querySelectorAll('.tab').forEach(function (t) { t.setAttribute('aria-selected', String(t === tab)); });
+      document.querySelectorAll('.screen img').forEach(function (img) { img.classList.toggle('on', img.dataset.shot === name); });
+      document.getElementById('cap').textContent = captions[name];
     });
   });
 </script>

@@ -1,0 +1,13 @@
+{
+  "name": "rift-demo-agent",
+  "private": true,
+  "type": "module",
+  "description": "Mock Rift agent for landing-page screenshots. See README.md.",
+  "scripts": {
+    "shop": "./make-shop.sh",
+    "start": "node agent.mjs"
+  },
+  "dependencies": {
+    "ws": "^8.18.0"
+  }
+}
