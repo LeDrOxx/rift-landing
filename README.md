@@ -2,7 +2,7 @@
 
 Official landing page for **Rift Assistant** ([riftassistant.com](https://riftassistant.com)).
 
-> Code on your Mac from your phone. Chat with Claude Code, review what changed, and watch and control iOS simulators, Android emulators and web previews live, from any network. Your Mac can stay locked.
+> Code on your Mac from your phone. Drive Claude Code running on your Mac, use a real terminal and git, and watch and control iOS simulators, Android emulators and web previews live, from any network. Your Mac can stay locked.
 
 ## 🚀 Deployment (Railway)
 
