@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://riftassistant.com/sitemap.xml
+Sitemap: https://www.riftassistant.com/sitemap.xml

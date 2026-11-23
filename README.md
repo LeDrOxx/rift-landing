@@ -21,7 +21,7 @@ Content pages share `public/assets/site.css`. When you add a page, add it to `pu
 
 ## 🚀 Deployment (Vercel)
 
-Deployed on Vercel from this repo. `vercel.json` sets the output directory to `public/`, clean URLs, the `www` → apex redirect and cache headers. Unknown paths get `public/404.html` with a 404 status.
+Deployed on Vercel from this repo. The primary domain is `www.riftassistant.com` (the apex redirects to it in Vercel domain settings), so canonical URLs use `www`. `vercel.json` sets the output directory to `public/`, clean URLs and cache headers. Unknown paths get `public/404.html` with a 404 status.
 
 ## 🛠 Local Development
 
