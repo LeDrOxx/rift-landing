@@ -1,0 +1,13 @@
+{
+  "name": "Rift",
+  "short_name": "Rift",
+  "description": "Code on your Mac from your phone.",
+  "start_url": "/",
+  "display": "browser",
+  "background_color": "#0d0915",
+  "theme_color": "#0d0915",
+  "icons": [
+    { "src": "/assets/icon-256.png", "sizes": "256x256", "type": "image/png" },
+    { "src": "/assets/icon.png", "sizes": "1024x1024", "type": "image/png" }
+  ]
+}

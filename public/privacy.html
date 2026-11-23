@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Privacy Policy | Rift</title>
+  <meta name="description" content="Rift's privacy policy. No accounts, no analytics, no servers in the middle: your code, chats and video stay between your phone and your own computer." />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+  <link rel="canonical" href="https://riftassistant.com/privacy" />
+  <meta name="theme-color" content="#0d0915" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Rift" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:url" content="https://riftassistant.com/privacy" />
+  <meta property="og:title" content="Privacy Policy | Rift" />
+  <meta property="og:description" content="Rift's privacy policy. No accounts, no analytics, no servers in the middle: your code, chats and video stay between your phone and your own computer." />
+  <meta property="og:image" content="https://riftassistant.com/assets/og.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Rift: code on your Mac from your phone, with chat, terminal, git and live simulators" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Privacy Policy | Rift" />
+  <meta name="twitter:description" content="Rift's privacy policy. No accounts, no analytics, no servers in the middle: your code, chats and video stay between your phone and your own computer." />
+  <meta name="twitter:image" content="https://riftassistant.com/assets/og.png" />
+
+  <link rel="icon" type="image/svg+xml" href="/assets/icon.svg" />
+  <link rel="icon" type="image/png" sizes="256x256" href="/assets/icon-256.png" />
+  <link rel="apple-touch-icon" href="/assets/icon-256.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/assets/site.css" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Rift",
+            "item": "https://riftassistant.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Privacy Policy",
+            "item": "https://riftassistant.com/privacy"
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a href="/" class="logo"><img src="/assets/icon.svg" alt="" />Rift</a>
+    <nav class="nav-links" aria-label="Main">
+      <a href="/#features">Features</a>
+      <a href="/setup">Setup guide</a>
+      <a href="/faq">FAQ</a>
+      <a href="/support">Support</a>
+    </nav>
+    <a href="mailto:mohamed@riftassistant.com?subject=Rift%20early%20access" class="btn btn-primary btn-sm">Get early access</a>
+  </div>
+</header>
+
+<main>
+  <section class="page-hero">
+    <div class="wrap">
+      <p class="eyebrow">Legal</p>
+      <h1>Privacy Policy</h1>
+      <p class="lede">Short version: Rift has no accounts, no analytics and no ads. Your code, chats and video go straight between your phone and your own computer, and we never see them.</p>
+      <p class="updated">Last updated: 23 November 2026</p>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <article class="prose">
+      <div class="toc"><b>On this page</b><ol>
+        <li><a href="#who">Who we are</a></li>
+        <li><a href="#scope">What this policy covers</a></li>
+        <li><a href="#on-device">Data that stays on your devices</a></li>
+        <li><a href="#permissions">App permissions</a></li>
+        <li><a href="#services">Services you connect to</a></li>
+        <li><a href="#website">This website</a></li>
+        <li><a href="#email">When you email us</a></li>
+        <li><a href="#children">Children</a></li>
+        <li><a href="#rights">Your rights</a></li>
+        <li><a href="#changes">Changes to this policy</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ol></div>
+      
+      <h2 id="who">1. Who we are</h2>
+      <p>Rift is made and published by Mohammed Salah Amine Ghorab, an individual developer ("we", "us"). If you have a question about privacy, email <a href="mailto:support@riftassistant.com">support@riftassistant.com</a>.</p>
+      
+      <h2 id="scope">2. What this policy covers</h2>
+      <p>This policy covers the Rift phone app for iPhone and Android, Rift Desktop, the Rift agent that runs on your computer, the Rift extensions for VS Code and JetBrains IDEs, and this website, riftassistant.com.</p>
+      
+      <h2 id="on-device">3. Data that stays on your devices</h2>
+      <p><strong>We don't collect, store, sell or share your personal data.</strong> Rift has no user accounts and no analytics or advertising SDKs, and we don't run any server that your data passes through. The Rift app talks directly to the Rift agent on your own computer, over your own Tailscale network.</p>
+      <ul>
+        <li><strong>Code, files, git, terminals and chats</strong> live on your computer. The app shows them on your phone by fetching them from your computer.</li>
+        <li><strong>Video</strong> from simulators, emulators and web previews streams directly from your computer to your phone inside your Tailscale network. It doesn't use any relay, STUN or TURN server.</li>
+        <li><strong>Pairing.</strong> You pair with a one-time code that expires after 5 minutes. Each phone then gets a random 256-bit device token. The phone keeps the token in its secure storage, and your computer stores only a hash of it. You can revoke a phone at any time.</li>
+        <li><strong>Settings and logs.</strong> The app keeps its settings on your phone. The agent keeps its configuration and logs on your computer, in the <code>~/.rift</code> folder.</li>
+      </ul>
+      <p>None of this is sent to us.</p>
+      
+      <h2 id="permissions">4. App permissions</h2>
+      <p>The app asks for a permission only when you use the feature that needs it. You can turn any permission off in your phone's settings.</p>
+      <div class="table-scroll"><table>
+        <thead><tr><th>Permission</th><th>Why Rift asks for it</th></tr></thead>
+        <tbody>
+          <tr><td>Camera</td><td>To scan the pairing QR code shown on your computer, and to take photos you choose to attach to a message.</td></tr>
+          <tr><td>Photos, media and files</td><td>To attach photos, screenshots, PDFs or other files you pick to a message. Rift reads only the items you choose.</td></tr>
+          <tr><td>Face ID, Touch ID or fingerprint</td><td>To lock the app, because it can run code on your computer. Your phone's operating system does the check. Rift never sees your biometric data.</td></tr>
+        </tbody>
+      </table></div>
+      <p>When you have replies read aloud, Rift uses your phone's built-in text-to-speech.</p>
+      
+      <h2 id="services">5. Services you connect to</h2>
+      <p>Rift works with services that you set up and sign in to yourself. Your agreements with those services, and their privacy policies, apply to them.</p>
+      <ul>
+        <li><strong>Anthropic (Claude Code).</strong> When you chat, Rift runs Claude Code on your computer. Claude Code sends your prompts, and the files and output it works with, to Anthropic under your own agreement with Anthropic. See <a href="https://www.anthropic.com/legal/privacy" rel="noopener">Anthropic's privacy policy</a>.</li>
+        <li><strong>Tailscale.</strong> Your phone reaches your computer through your own Tailscale network (tailnet). See <a href="https://tailscale.com/privacy-policy" rel="noopener">Tailscale's privacy policy</a>.</li>
+        <li><strong>ntfy (optional).</strong> If you turn on notifications, the agent sends a short, generic message, such as that Claude needs your approval, to a private ntfy topic that your phone subscribes to. Notifications never contain code, commands or file paths. They go through ntfy.sh unless you point Rift at your own ntfy server. See <a href="https://ntfy.sh/docs/privacy/" rel="noopener">ntfy's privacy policy</a>.</li>
+        <li><strong>Apple App Store and Google Play.</strong> Apple and Google handle app downloads and updates. If you've allowed it in your phone's settings, they may share anonymous crash reports and usage statistics with us.</li>
+        <li><strong>Software updates.</strong> Rift Desktop and the agent check for updates, and download them, from our release server (currently GitHub Releases). Like any download, this shares your IP address with that server.</li>
+      </ul>
+      
+      <h2 id="website">6. This website</h2>
+      <p>riftassistant.com doesn't use cookies, analytics or tracking pixels.</p>
+      <ul>
+        <li><strong>Hosting.</strong> The site is hosted on Vercel. Vercel keeps standard request logs, such as your IP address, browser and the pages you open, to serve and protect the site.</li>
+        <li><strong>Fonts.</strong> Fonts load from Google Fonts, so your browser connects to Google when you visit.</li>
+      </ul>
+      
+      <h2 id="email">7. When you email us</h2>
+      <p>If you email us, we receive your email address and whatever you choose to send. We use it only to reply and help you. We keep it only as long as we need to, and you can ask us to delete it at any time.</p>
+      
+      <h2 id="children">8. Children</h2>
+      <p>Rift is a developer tool and isn't meant for children under 13, or under 16 in the European Economic Area and the UK. We don't knowingly collect data from children.</p>
+      
+      <h2 id="rights">9. Your rights</h2>
+      <p>Depending on where you live, for example in the EU, the UK or California, you have the right to access, correct or delete your personal data, and to object to how it's used. Apart from emails you send us, we don't hold personal data about you, so there's usually nothing to access or delete. To make a request, email <a href="mailto:support@riftassistant.com">support@riftassistant.com</a>. You can also complain to your local data protection authority.</p>
+      <p>To remove Rift's data from your own devices, do any of the following:</p>
+      <ul>
+        <li>Revoke the phone on your computer.</li>
+        <li>Delete the Rift app.</li>
+        <li>Uninstall Rift Desktop and delete the <code>~/.rift</code> folder.</li>
+      </ul>
+      
+      <h2 id="changes">10. Changes to this policy</h2>
+      <p>If Rift changes how it handles data, for example when new features arrive, we'll update this page and the date at the top. If a change is significant, we'll also say so in the app or on this site before it takes effect.</p>
+      
+      <h2 id="contact">11. Contact</h2>
+      <p>Mohammed Salah Amine Ghorab, publisher of Rift. Email: <a href="mailto:support@riftassistant.com">support@riftassistant.com</a></p>
+    </article>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <a href="/" class="logo"><img src="/assets/icon.svg" alt="" />Rift</a>
+      <nav aria-label="Footer">
+        <a href="/#features">Features</a>
+        <a href="/#security">Security</a>
+        <a href="/setup">Setup guide</a>
+        <a href="/faq">FAQ</a>
+        <a href="/support">Support</a>
+        <a href="/privacy">Privacy</a>
+        <a href="/terms">Terms</a>
+      </nav>
+      <span>© 2026 riftassistant.com</span>
+    </div>
+    <p class="disclaimer">Rift is an independent product and is not affiliated with or endorsed by Anthropic. Claude and Claude Code are trademarks of Anthropic. Claude Code is used under your own agreement with Anthropic. Tailscale is a trademark of Tailscale Inc.</p>
+  </div>
+</footer>
+</body>
+</html>

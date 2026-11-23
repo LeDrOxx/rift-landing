@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Setup Guide: Code on your Mac from your phone | Rift</title>
+  <meta name="description" content="Set up Rift step by step: install Rift Desktop, connect Tailscale, pair your phone, and control Claude Code, git, simulators and web previews from anywhere." />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+  <link rel="canonical" href="https://riftassistant.com/setup" />
+  <meta name="theme-color" content="#0d0915" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Rift" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:url" content="https://riftassistant.com/setup" />
+  <meta property="og:title" content="Setup Guide: Code on your Mac from your phone | Rift" />
+  <meta property="og:description" content="Set up Rift step by step: install Rift Desktop, connect Tailscale, pair your phone, and control Claude Code, git, simulators and web previews from anywhere." />
+  <meta property="og:image" content="https://riftassistant.com/assets/og.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Rift: code on your Mac from your phone, with chat, terminal, git and live simulators" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Setup Guide: Code on your Mac from your phone | Rift" />
+  <meta name="twitter:description" content="Set up Rift step by step: install Rift Desktop, connect Tailscale, pair your phone, and control Claude Code, git, simulators and web previews from anywhere." />
+  <meta name="twitter:image" content="https://riftassistant.com/assets/og.png" />
+
+  <link rel="icon" type="image/svg+xml" href="/assets/icon.svg" />
+  <link rel="icon" type="image/png" sizes="256x256" href="/assets/icon-256.png" />
+  <link rel="apple-touch-icon" href="/assets/icon-256.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/assets/site.css" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Rift",
+            "item": "https://riftassistant.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Setup guide",
+            "item": "https://riftassistant.com/setup"
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a href="/" class="logo"><img src="/assets/icon.svg" alt="" />Rift</a>
+    <nav class="nav-links" aria-label="Main">
+      <a href="/#features">Features</a>
+      <a href="/setup" aria-current="page">Setup guide</a>
+      <a href="/faq">FAQ</a>
+      <a href="/support">Support</a>
+    </nav>
+    <a href="mailto:mohamed@riftassistant.com?subject=Rift%20early%20access" class="btn btn-primary btn-sm">Get early access</a>
+  </div>
+</header>
+
+<main>
+  <section class="page-hero">
+    <div class="wrap">
+      <p class="eyebrow">Setup guide</p>
+      <h1>Set up Rift in a few minutes</h1>
+      <p class="lede">Install Rift on your computer, connect it to your phone over Tailscale, and you can code from anywhere. Rift Desktop has a button for every step.</p>
+      
+    </div>
+  </section>
+
+  <div class="wrap">
+    <article class="prose">
+      <div class="note"><p><strong>Rift is in early access.</strong> The phone app is coming soon to the App Store and Google Play. <a href="mailto:mohamed@riftassistant.com?subject=Rift%20early%20access">Email us</a> to get it early.</p></div>
+      
+      <h2 id="before-you-start">Before you start</h2>
+      <h3>Everyone</h3>
+      <ul>
+        <li>A Mac, or a Windows PC for Android and web</li>
+        <li>An iPhone or Android phone</li>
+        <li>Tailscale on your computer and phone, signed in to the same account</li>
+        <li>For chat: Claude Code installed and set up on your computer. Devices, previews, the terminal and git work without it.</li>
+      </ul>
+      <h3>Depending on what you build</h3>
+      <ul>
+        <li><strong>iOS:</strong> Xcode</li>
+        <li><strong>Android:</strong> the Android SDK and an emulator</li>
+        <li><strong>Flutter / React Native:</strong> their usual toolchains</li>
+        <li><strong>Web:</strong> Google Chrome and ffmpeg</li>
+      </ul>
+      
+      <h2 id="steps">Step by step</h2>
+      <ol class="steps">
+        <li>
+          <h3>Install Rift Desktop</h3>
+          <p>Rift Desktop installs the Rift agent as a login service, so it starts with your computer. It lives in your menu bar, or in the system tray on Windows. From there you can start, stop and restart the agent and open its logs.</p>
+          <p class="check">✓ Rift Desktop shows the agent as running.</p>
+        </li>
+        <li>
+          <h3>Sign in to Claude Code</h3>
+          <p>Rift runs the Claude Code installed on your computer. If you haven't set it up yet, click <strong>Open terminal</strong> in Rift Desktop, run <code>claude</code>, and sign in. Skip this step if you only want devices, previews, the terminal and git.</p>
+          <p class="check">✓ Rift Desktop marks the step as done.</p>
+        </li>
+        <li>
+          <h3>Connect Tailscale on your computer</h3>
+          <p>Install Tailscale and sign in. Then click <strong>Enable secure access</strong>. This makes the agent reachable only inside your own Tailscale network, never from the public internet. If HTTPS certificates aren't on for your tailnet yet, Rift opens the Tailscale page where you approve them. The first certificate can take about a minute.</p>
+          <p class="check">✓ Rift Desktop shows Tailscale as connected and secure access as on.</p>
+        </li>
+        <li>
+          <h3>Check the connection</h3>
+          <p>Rift Desktop checks that your computer is reachable at its private <code>.ts.net</code> address. It also runs a preview check that streams real video for a few seconds. If anything fails, the Details panel shows the exact command and its output.</p>
+          <p class="check">✓ Both checks pass.</p>
+        </li>
+        <li>
+          <h3>Install Rift and Tailscale on your phone</h3>
+          <p>Install the Rift app and the Tailscale app. Sign in to Tailscale with <strong>the same account</strong> as your computer, and turn it on. Rift Desktop shows a QR code that opens the right Tailscale download for your phone.</p>
+        </li>
+        <li>
+          <h3>Scan the pairing code</h3>
+          <p>In Rift Desktop, show the pairing QR code, then scan it with the Rift app. The code works once and expires after 5 minutes. Your phone gets its own device token, and you can revoke it at any time.</p>
+          <p class="check">✓ Your phone appears in the list of paired devices.</p>
+        </li>
+      </ol>
+      
+      <h2 id="device-tools">Set up device tools (optional)</h2>
+      <ul>
+        <li><strong>iOS Simulator:</strong> install Xcode. Rift Desktop installs the tool it uses to stream the simulator.</li>
+        <li><strong>Android emulator:</strong> install the Android SDK, including <code>adb</code> and the emulator, and create a virtual device. Rift finds them automatically.</li>
+        <li><strong>Web previews:</strong> install Google Chrome and ffmpeg. Rift detects <code>dev</code> scripts, Laravel, Django and Rails, and your <code>launch.json</code> configurations.</li>
+      </ul>
+      <p>Video comes from the simulator or emulator itself, not from your screen, so it keeps working when your computer's screen is locked.</p>
+      
+      <h2 id="notifications">Turn on notifications (optional)</h2>
+      <p>To get a notification when Claude needs your approval or finishes a task, install the ntfy app on your phone and tap the subscribe link in Rift's Settings. Notifications contain generic text only, never code or file paths.</p>
+      
+      <h2 id="windows">On Windows</h2>
+      <p>Rift Desktop runs on Windows with Android emulators, web previews, the terminal (PowerShell) and git. iOS simulators need a Mac.</p>
+      
+      <h2 id="editors">Use it from your editor too</h2>
+      <p>The <strong>VS Code extension</strong> and the <strong>JetBrains plugin</strong> (2025.1 and later) put the same Claude chat inside your editor, in the same live session as your phone. Both use the agent installed by Rift Desktop. Android Studio needs a runtime with JCEF.</p>
+      
+      <h2 id="next">Next: open a project</h2>
+      <ul>
+        <li>Projects open only inside folders you allow. By default these are <code>~/Workspace</code> and <code>~/StudioProjects</code>.</li>
+        <li>By default, Claude asks before running tools, and you approve each one from your phone.</li>
+        <li>Keep your computer awake: plugged in with the lid open, or closed with an external display. The screen can lock.</li>
+      </ul>
+      <p>Stuck? See <a href="/support">Support</a> for fixes to common problems, or read the <a href="/faq">FAQ</a>.</p>
+    </article>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <a href="/" class="logo"><img src="/assets/icon.svg" alt="" />Rift</a>
+      <nav aria-label="Footer">
+        <a href="/#features">Features</a>
+        <a href="/#security">Security</a>
+        <a href="/setup">Setup guide</a>
+        <a href="/faq">FAQ</a>
+        <a href="/support">Support</a>
+        <a href="/privacy">Privacy</a>
+        <a href="/terms">Terms</a>
+      </nav>
+      <span>© 2026 riftassistant.com</span>
+    </div>
+    <p class="disclaimer">Rift is an independent product and is not affiliated with or endorsed by Anthropic. Claude and Claude Code are trademarks of Anthropic. Claude Code is used under your own agreement with Anthropic. Tailscale is a trademark of Tailscale Inc.</p>
+  </div>
+</footer>
+</body>
+</html>

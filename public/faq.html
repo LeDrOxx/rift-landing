@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>FAQ: Rift, code on your Mac from your phone</title>
+  <meta name="description" content="Answers about Rift: setup, Tailscale, Claude Code, simulators and emulators, web previews, security, privacy and Windows support." />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+  <link rel="canonical" href="https://riftassistant.com/faq" />
+  <meta name="theme-color" content="#0d0915" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Rift" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:url" content="https://riftassistant.com/faq" />
+  <meta property="og:title" content="FAQ: Rift, code on your Mac from your phone" />
+  <meta property="og:description" content="Answers about Rift: setup, Tailscale, Claude Code, simulators and emulators, web previews, security, privacy and Windows support." />
+  <meta property="og:image" content="https://riftassistant.com/assets/og.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Rift: code on your Mac from your phone, with chat, terminal, git and live simulators" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="FAQ: Rift, code on your Mac from your phone" />
+  <meta name="twitter:description" content="Answers about Rift: setup, Tailscale, Claude Code, simulators and emulators, web previews, security, privacy and Windows support." />
+  <meta name="twitter:image" content="https://riftassistant.com/assets/og.png" />
+
+  <link rel="icon" type="image/svg+xml" href="/assets/icon.svg" />
+  <link rel="icon" type="image/png" sizes="256x256" href="/assets/icon-256.png" />
+  <link rel="apple-touch-icon" href="/assets/icon-256.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/assets/site.css" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Rift",
+            "item": "https://riftassistant.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "FAQ",
+            "item": "https://riftassistant.com/faq"
+          }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://riftassistant.com/faq#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is Rift?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Rift is a phone app plus a small agent on your computer. From your phone you can drive Claude Code running on your computer, use a real terminal and git, and control iOS simulators, Android emulators and web previews, from any network."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What do I need to use Rift?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "A Mac (or a Windows PC for Android and web), an iPhone or Android phone, and Tailscale on both, signed in to the same account. For chat, you also need Claude Code installed and set up on your computer. See the setup guide for the full list."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "When can I get it?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Rift is coming soon to the App Store and Google Play. Email us for early access."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does it work away from home?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. Rift connects over Tailscale, so it works on mobile data or any Wi-Fi, as long as your phone and computer are signed in to the same Tailscale account."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Why does Rift use Tailscale?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Tailscale gives your phone and computer a private network that only your devices can join. The Rift agent listens only on your computer and is reached through that network, so it's never exposed to the internet. There are no Rift servers in the middle."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does my Mac need to stay unlocked?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. The screen can lock and the display can sleep. Video comes straight from the simulator or emulator, not from your Mac's screen. The Mac does need to stay awake: plugged in with the lid open, or closed with an external display."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What happens when I close the app?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Work keeps running on your computer. Terminals keep running, and when you reopen one its recent output is still there. With notifications on, you hear from Rift when Claude needs you or finishes a task."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does Rift include Claude?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. Rift runs Claude Code that you install and set up yourself on your computer, under your own agreement with Anthropic. Rift doesn't sell, include or resell any Claude usage."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can I use it without Claude Code?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. Simulators, emulators, web previews, dev servers and git work without it. You only need Claude Code for chat."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can Claude run commands without asking?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "You decide. Claude can ask before each tool, auto-accept edits, or plan first. A turn limit per prompt makes long tasks pause and check in, and you can stop Claude at any time."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can I use my editor at the same time?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. The VS Code extension and the JetBrains plugin show the same live Claude session as your phone, so you can switch between your desk and your phone."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Which kinds of projects can I run?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Flutter, React Native and native iOS or Android apps, plus your launch.json configurations. For the web, Rift detects Laravel, Django, Rails and dev scripts, starts your dev servers, and shows their logs."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can I control the simulator from my phone?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. Stream an iOS Simulator or Android emulator to your phone and use it with touch and keyboard, including full screen. You can also boot any simulator or emulator from the app."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How do web previews work?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Rift opens your page in a Chrome window on your computer and streams it to your phone at phone, tablet, laptop or desktop size. Claude can read the console errors and take screenshots."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does my code go through Rift servers?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. Rift has no servers in the middle. Your phone talks directly to the agent on your computer over your Tailscale network. When you chat, Claude Code on your computer works with Anthropic under your own agreement. See the Privacy Policy."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What if I lose my phone?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Each paired phone has its own token, and you can revoke it from your computer at any time. The app is also locked with Face ID or your fingerprint."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What do notifications contain?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Generic text only, such as that Claude needs your approval or has finished. They never contain code, commands or file paths."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does it work on Windows?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Rift Desktop runs on Windows with Android emulators and web previews. iOS simulators need a Mac."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Which IDEs are supported?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "VS Code, and JetBrains IDEs 2025.1 and later, such as IntelliJ IDEA, PhpStorm and WebStorm. Android Studio needs a runtime with JCEF."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a href="/" class="logo"><img src="/assets/icon.svg" alt="" />Rift</a>
+    <nav class="nav-links" aria-label="Main">
+      <a href="/#features">Features</a>
+      <a href="/setup">Setup guide</a>
+      <a href="/faq" aria-current="page">FAQ</a>
+      <a href="/support">Support</a>
+    </nav>
+    <a href="mailto:mohamed@riftassistant.com?subject=Rift%20early%20access" class="btn btn-primary btn-sm">Get early access</a>
+  </div>
+</header>
+
+<main>
+  <section class="page-hero">
+    <div class="wrap">
+      <p class="eyebrow">FAQ</p>
+      <h1>Frequently asked questions</h1>
+      <p class="lede">Everything about setting up and using Rift. If your question isn't here, <a href="/support" style="color:var(--brand-2)">contact support</a>.</p>
+      
+    </div>
+  </section>
+
+  <div class="wrap">
+    <article class="prose">
+      <h2 id="getting-started">Getting started</h2>
+      <div class="faq-group">
+        <details>
+          <summary>What is Rift?</summary>
+          <p>Rift is a phone app plus a small agent on your computer. From your phone you can drive Claude Code running on your computer, use a real terminal and git, and control iOS simulators, Android emulators and web previews, from any network.</p>
+        </details>
+        <details>
+          <summary>What do I need to use Rift?</summary>
+          <p>A Mac (or a Windows PC for Android and web), an iPhone or Android phone, and Tailscale on both, signed in to the same account. For chat, you also need Claude Code installed and set up on your computer. See the <a href="/setup">setup guide</a> for the full list.</p>
+        </details>
+        <details>
+          <summary>When can I get it?</summary>
+          <p>Rift is coming soon to the App Store and Google Play. <a href="mailto:mohamed@riftassistant.com?subject=Rift%20early%20access">Email us</a> for early access.</p>
+        </details>
+      </div>
+      
+      <h2 id="connection">Connection and Tailscale</h2>
+      <div class="faq-group">
+        <details>
+          <summary>Does it work away from home?</summary>
+          <p>Yes. Rift connects over Tailscale, so it works on mobile data or any Wi-Fi, as long as your phone and computer are signed in to the same Tailscale account.</p>
+        </details>
+        <details>
+          <summary>Why does Rift use Tailscale?</summary>
+          <p>Tailscale gives your phone and computer a private network that only your devices can join. The Rift agent listens only on your computer and is reached through that network, so it's never exposed to the internet. There are no Rift servers in the middle.</p>
+        </details>
+        <details>
+          <summary>Does my Mac need to stay unlocked?</summary>
+          <p>No. The screen can lock and the display can sleep. Video comes straight from the simulator or emulator, not from your Mac's screen. The Mac does need to stay awake: plugged in with the lid open, or closed with an external display.</p>
+        </details>
+        <details>
+          <summary>What happens when I close the app?</summary>
+          <p>Work keeps running on your computer. Terminals keep running, and when you reopen one its recent output is still there. With notifications on, you hear from Rift when Claude needs you or finishes a task.</p>
+        </details>
+      </div>
+      
+      <h2 id="claude-code">Claude Code</h2>
+      <div class="faq-group">
+        <details>
+          <summary>Does Rift include Claude?</summary>
+          <p>No. Rift runs Claude Code that you install and set up yourself on your computer, under your own agreement with Anthropic. Rift doesn't sell, include or resell any Claude usage.</p>
+        </details>
+        <details>
+          <summary>Can I use it without Claude Code?</summary>
+          <p>Yes. Simulators, emulators, web previews, dev servers and git work without it. You only need Claude Code for chat.</p>
+        </details>
+        <details>
+          <summary>Can Claude run commands without asking?</summary>
+          <p>You decide. Claude can ask before each tool, auto-accept edits, or plan first. A turn limit per prompt makes long tasks pause and check in, and you can stop Claude at any time.</p>
+        </details>
+        <details>
+          <summary>Can I use my editor at the same time?</summary>
+          <p>Yes. The VS Code extension and the JetBrains plugin show the same live Claude session as your phone, so you can switch between your desk and your phone.</p>
+        </details>
+      </div>
+      
+      <h2 id="devices">Devices and previews</h2>
+      <div class="faq-group">
+        <details>
+          <summary>Which kinds of projects can I run?</summary>
+          <p>Flutter, React Native and native iOS or Android apps, plus your <code>launch.json</code> configurations. For the web, Rift detects Laravel, Django, Rails and <code>dev</code> scripts, starts your dev servers, and shows their logs.</p>
+        </details>
+        <details>
+          <summary>Can I control the simulator from my phone?</summary>
+          <p>Yes. Stream an iOS Simulator or Android emulator to your phone and use it with touch and keyboard, including full screen. You can also boot any simulator or emulator from the app.</p>
+        </details>
+        <details>
+          <summary>How do web previews work?</summary>
+          <p>Rift opens your page in a Chrome window on your computer and streams it to your phone at phone, tablet, laptop or desktop size. Claude can read the console errors and take screenshots.</p>
+        </details>
+      </div>
+      
+      <h2 id="security">Security and privacy</h2>
+      <div class="faq-group">
+        <details>
+          <summary>Does my code go through Rift servers?</summary>
+          <p>No. Rift has no servers in the middle. Your phone talks directly to the agent on your computer over your Tailscale network. When you chat, Claude Code on your computer works with Anthropic under your own agreement. See the <a href="/privacy">Privacy Policy</a>.</p>
+        </details>
+        <details>
+          <summary>What if I lose my phone?</summary>
+          <p>Each paired phone has its own token, and you can revoke it from your computer at any time. The app is also locked with Face ID or your fingerprint.</p>
+        </details>
+        <details>
+          <summary>What do notifications contain?</summary>
+          <p>Generic text only, such as that Claude needs your approval or has finished. They never contain code, commands or file paths.</p>
+        </details>
+      </div>
+      
+      <h2 id="platforms">Platforms</h2>
+      <div class="faq-group">
+        <details>
+          <summary>Does it work on Windows?</summary>
+          <p>Rift Desktop runs on Windows with Android emulators and web previews. iOS simulators need a Mac.</p>
+        </details>
+        <details>
+          <summary>Which IDEs are supported?</summary>
+          <p>VS Code, and JetBrains IDEs 2025.1 and later, such as IntelliJ IDEA, PhpStorm and WebStorm. Android Studio needs a runtime with JCEF.</p>
+        </details>
+      </div>
+    </article>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <a href="/" class="logo"><img src="/assets/icon.svg" alt="" />Rift</a>
+      <nav aria-label="Footer">
+        <a href="/#features">Features</a>
+        <a href="/#security">Security</a>
+        <a href="/setup">Setup guide</a>
+        <a href="/faq">FAQ</a>
+        <a href="/support">Support</a>
+        <a href="/privacy">Privacy</a>
+        <a href="/terms">Terms</a>
+      </nav>
+      <span>© 2026 riftassistant.com</span>
+    </div>
+    <p class="disclaimer">Rift is an independent product and is not affiliated with or endorsed by Anthropic. Claude and Claude Code are trademarks of Anthropic. Claude Code is used under your own agreement with Anthropic. Tailscale is a trademark of Tailscale Inc.</p>
+  </div>
+</footer>
+</body>
+</html>
