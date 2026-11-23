@@ -40,7 +40,7 @@
         "name": "Rift",
         "url": "https://riftassistant.com/",
         "logo": "https://riftassistant.com/assets/icon.png",
-        "email": "mohamed@riftassistant.com"
+        "email": "support@riftassistant.com"
       },
       {
         "@type": "WebSite",
@@ -66,18 +66,6 @@
           "https://riftassistant.com/assets/screens/device.jpg",
           "https://riftassistant.com/assets/screens/browser.jpg",
           "https://riftassistant.com/assets/screens/home.jpg"
-        ]
-      },
-      {
-        "@type": "FAQPage",
-        "@id": "https://riftassistant.com/#faq",
-        "mainEntity": [
-          { "@type": "Question", "name": "Does Rift include Claude?", "acceptedAnswer": { "@type": "Answer", "text": "No. Rift runs Claude Code that you install and set up yourself on your computer, under your own agreement with Anthropic. Rift doesn't sell, include or resell any Claude usage." } },
-          { "@type": "Question", "name": "Does my Mac need to stay unlocked?", "acceptedAnswer": { "@type": "Answer", "text": "No. The screen can lock and the display can sleep. Video comes straight from the simulator or emulator, not from your Mac's screen. The Mac does need to stay awake: plugged in with the lid open, or closed with an external display." } },
-          { "@type": "Question", "name": "Does it work away from home?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Rift connects over Tailscale, so it works on mobile data or any Wi-Fi, as long as your phone and computer are signed in to the same Tailscale account." } },
-          { "@type": "Question", "name": "Can I use it without Claude Code?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Simulators, emulators, web previews, dev servers and git work without it. You only need Claude Code for chat." } },
-          { "@type": "Question", "name": "Does it work on Windows?", "acceptedAnswer": { "@type": "Answer", "text": "Rift Desktop runs on Windows with Android emulators and web previews. iOS simulators need a Mac." } },
-          { "@type": "Question", "name": "When can I get it?", "acceptedAnswer": { "@type": "Answer", "text": "Rift is coming soon to the App Store and Google Play. Email us for early access." } }
         ]
       }
     ]
@@ -305,6 +293,9 @@
     summary::after { content: "+"; font-family: var(--mono); color: var(--brand-2); font-size: 20px; line-height: 1; }
     details[open] summary::after { content: "−"; }
     details p { margin: 0 0 18px; color: var(--muted); font-size: 15px; }
+    .faq-more { text-align: center; margin: 28px 0 0; }
+    .faq-more a { color: var(--brand-2); font-weight: 600; }
+    .faq-more a:hover { color: var(--text); }
 
     /* Final CTA */
     .final { text-align: center; padding: 64px 32px; border-radius: 24px; border: 1px solid #6e72bd55; background: radial-gradient(600px 240px at 50% 0%, #6e72bd30, transparent 70%), var(--card); }
@@ -316,7 +307,7 @@
     .foot { display: flex; flex-wrap: wrap; gap: 18px; justify-content: space-between; align-items: center; }
     .foot .logo { font-size: 15px; color: var(--muted); }
     .foot .logo img { width: 24px; height: 24px; border-radius: 7px; }
-    .foot nav { display: flex; gap: 20px; }
+    .foot nav { display: flex; flex-wrap: wrap; gap: 10px 20px; }
     .foot nav a:hover { color: var(--text); }
     .disclaimer { margin-top: 18px; font-size: 12px; color: var(--dim); }
   </style>
@@ -699,6 +690,7 @@
           <p>Rift is coming soon to the App Store and Google Play. <a href="mailto:mohamed@riftassistant.com?subject=Rift%20early%20access" style="color:var(--brand-2)">Email us</a> for early access.</p>
         </details>
       </div>
+      <p class="faq-more"><a href="/faq">All questions →</a></p>
     </div>
   </section>
 
@@ -719,14 +711,15 @@
 <footer>
   <div class="wrap">
     <div class="foot">
-      <span class="logo"><img src="/assets/icon.svg" alt="" />Rift</span>
+      <a href="/" class="logo"><img src="/assets/icon.svg" alt="" />Rift</a>
       <nav aria-label="Footer">
-        <a href="#terminal">Terminal</a>
-        <a href="#git">Git</a>
         <a href="#features">Features</a>
         <a href="#security">Security</a>
-        <a href="#faq">FAQ</a>
-        <a href="mailto:mohamed@riftassistant.com">Contact</a>
+        <a href="/setup">Setup guide</a>
+        <a href="/faq">FAQ</a>
+        <a href="/support">Support</a>
+        <a href="/privacy">Privacy</a>
+        <a href="/terms">Terms</a>
       </nav>
       <span>© 2026 riftassistant.com</span>
     </div>

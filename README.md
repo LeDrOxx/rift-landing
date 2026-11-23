@@ -4,17 +4,24 @@ Official landing page for **Rift Assistant** ([riftassistant.com](https://riftas
 
 > Code on your Mac from your phone. Drive Claude Code running on your Mac, use a real terminal and git, and watch and control iOS simulators, Android emulators and web previews live, from any network. Your Mac can stay locked.
 
-## 🚀 Deployment (Railway)
+## Pages
 
-This repository is built for zero-config Railway deployment:
+Plain static HTML in `public/`, no build step. `cleanUrls` serves `privacy.html` at `/privacy`.
 
-1. Open your project in [Railway](https://railway.app).
-2. Click **+ New Service** → **GitHub Repo** → select `LeDrOxx/rift-landing`.
-3. Railway automatically detects Node/Express via Nixpacks, runs `npm install`, and starts the server with `npm start`.
-4. In **Settings** → **Networking** → **Custom Domains**, add:
-   - `riftassistant.com`
-   - `www.riftassistant.com`
-5. Point your DNS records as specified by Railway.
+| URL | File | Notes |
+|---|---|---|
+| `/` | `index.html` | Landing page (inline CSS) |
+| `/setup` | `setup.html` | Setup guide |
+| `/faq` | `faq.html` | Full FAQ, holds the `FAQPage` JSON-LD |
+| `/support` | `support.html` | Contact + troubleshooting (App Store Support URL) |
+| `/privacy` | `privacy.html` | Privacy Policy (store Privacy Policy URL) |
+| `/terms` | `terms.html` | Terms of Use |
+
+Content pages share `public/assets/site.css`. When you add a page, add it to `public/sitemap.xml` and the footer of every page.
+
+## 🚀 Deployment (Vercel)
+
+Deployed on Vercel from this repo. `vercel.json` sets the output directory to `public/`, clean URLs, the `www` → apex redirect and cache headers. Unknown paths get `public/404.html` with a 404 status.
 
 ## 🛠 Local Development
 
@@ -23,4 +30,4 @@ npm install
 npm run dev
 ```
 
-Visit `http://localhost:3000`.
+Visit `http://localhost:3000`. `server.js` mirrors Vercel locally (clean URLs and real 404s).

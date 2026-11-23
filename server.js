@@ -19,12 +19,13 @@ app.use(compression());
 // Serve static files from public directory
 app.use(express.static(path.join(__dirname, 'public'), {
   maxAge: '1d',
-  etag: true
+  etag: true,
+  extensions: ['html'] // /privacy -> privacy.html, like Vercel's cleanUrls
 }));
 
-// Fallback to index.html for any direct routes
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'public', 'index.html'));
+// Unknown paths get a real 404, like Vercel
+app.use((req, res) => {
+  res.status(404).sendFile(path.join(__dirname, 'public', '404.html'));
 });
 
 app.listen(PORT, '0.0.0.0', () => {

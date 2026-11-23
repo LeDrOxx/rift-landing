@@ -15,4 +15,24 @@
     <image:image><image:loc>https://riftassistant.com/assets/screens/chat-edits.jpg</image:loc></image:image>
     <image:image><image:loc>https://riftassistant.com/assets/screens/changes.jpg</image:loc></image:image>
   </url>
+  <url>
+    <loc>https://riftassistant.com/setup</loc>
+    <lastmod>2026-11-23</lastmod>
+  </url>
+  <url>
+    <loc>https://riftassistant.com/faq</loc>
+    <lastmod>2026-11-23</lastmod>
+  </url>
+  <url>
+    <loc>https://riftassistant.com/support</loc>
+    <lastmod>2026-11-23</lastmod>
+  </url>
+  <url>
+    <loc>https://riftassistant.com/privacy</loc>
+    <lastmod>2026-11-23</lastmod>
+  </url>
+  <url>
+    <loc>https://riftassistant.com/terms</loc>
+    <lastmod>2026-11-23</lastmod>
+  </url>
 </urlset>
