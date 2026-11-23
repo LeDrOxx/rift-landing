@@ -20,6 +20,14 @@ xcrun simctl io <id> screenshot shot.png
 sips -s format jpeg -s formatOptions 82 -Z 1310 shot.png --out ../../public/assets/screens/<name>.jpg
 ```
 
+Retake tips (to keep shots identical to the last set):
+
+- Don't rerun `make-shop.sh` unless you want new commit hashes. The agent shifts commit times by the repo's age, so "7d ago" stays put, and it fakes fixed Mac stats on the home screen.
+- Chat shots: mask the Claude avatar (orange mascot in the left gutter) before converting.
+- Terminal: type through the agent, not the simulator keyboard (it garbles input). Get the id with `node rpc.mjs term.list`, then send `term.input` with a neutral prompt: `PROMPT=$'%F{#b8b2e6}%~ %F{green}$(git branch --show-current)%f\n%F{#b8b2e6}❯%f '` (with `setopt PROMPT_SUBST`), `cd ~/Workspace/shop && clear`, `git status -sb`, `npm test --silent`.
+- Android demo-mode network icons are glitchy; use the real status bar and set the emulator time zone to get a similar clock.
+- Wait a few seconds after `tap.mjs` before capturing, or the Dynamic Island shows up in the shot.
+
 Afterwards: `rift revoke <device id>`, delete `.token`, and `rm -rf ~/Workspace/shop` if you like.
 
 ## Anthropic policy (keep screenshots compliant)

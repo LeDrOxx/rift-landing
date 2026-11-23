@@ -10,7 +10,7 @@
 //   rift revoke <id>          afterwards, remove the "Rift demo" device it added
 
 import { request } from 'node:http';
-import { readFileSync, writeFileSync, existsSync } from 'node:fs';
+import { readFileSync, writeFileSync, existsSync, statSync } from 'node:fs';
 import { homedir } from 'node:os';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -24,6 +24,14 @@ const HOME = homedir();
 const SHOP = join(HOME, 'Workspace', 'shop');
 const now = () => Date.now();
 const min = 60_000, hour = 60 * min, day = 24 * hour;
+
+// Commit ages in the shots are relative to when make-shop.sh built the repo; shift commit times
+// by how long ago that was so a retake shows the same "7d ago" without rebuilding (new hashes).
+const ORIGIN = join(HERE, '.origin.git');
+const BUILT_AT = existsSync(ORIGIN) ? statSync(ORIGIN).birthtimeMs : now();
+
+// Fixed Mac stats so the home screen looks the same on every retake.
+const systemStats = () => ({ battery: { percent: 100, charging: false, plugged: false, minutesLeft: 16 * 60 + 56 }, net: { rxBps: 5 * 1024, txBps: 38 * 1024 }, cpu: 15, temp: { cpuC: 51, state: 'nominal' }, ts: now() });
 
 // ------------------------------------------------------------------ upstream auth
 
@@ -236,6 +244,15 @@ const commands = [
 ];
 
 const allSessions = [...shopSessions, ...homeChats];
+
+// Times above are relative to when the agent started; keep them relative to the request instead,
+// so "40m ago" stays "40m ago" however long the agent has been running.
+const STARTED = now();
+const fresh = (list, ...keys) => list.map((x) => {
+  const y = { ...x };
+  for (const k of keys.length ? keys : ['updatedAt', 'createdAt']) if (typeof y[k] === 'number') y[k] += now() - STARTED;
+  return y;
+});
 const isDemoSession = (id) => typeof id === 'string' && id.startsWith('demo-');
 const summary = (id) => allSessions.find((s) => s.id === id) ?? { ...shopSessions[0], id, title: 'New chat', state: 'idle' };
 
@@ -304,7 +321,7 @@ class PhoneConn {
 
   forward(id, method, params) {
     const upId = this.nextUpId++;
-    this.upCalls.set(upId, { phoneId: id });
+    this.upCalls.set(upId, { phoneId: id, method });
     this.up.send(JSON.stringify({ jsonrpc: '2.0', id: upId, method, params }));
   }
 
@@ -314,6 +331,10 @@ class PhoneConn {
       const c = this.upCalls.get(m.id);
       this.upCalls.delete(m.id);
       if (c.resolve) return m.error ? c.reject(new Error(m.error.message)) : c.resolve(m.result);
+      if (c.method === 'changes.log' && Array.isArray(m.result?.commits)) {
+        const shift = now() - BUILT_AT;
+        for (const commit of m.result.commits) if (typeof commit.ts === 'number') commit.ts += shift;
+      }
       return this.send({ ...m, id: c.phoneId });
     }
     if (m.method === 'event') {
@@ -353,9 +374,11 @@ class PhoneConn {
       case 'pair.claim':
         return { deviceId: 'demo-phone', token: 'demo' };
       case 'projects.list':
-        return projects;
+        return fresh(projects, 'lastOpened');
       case 'usage.get':
         return usage();
+      case 'system.stats':
+        return systemStats();
       case 'quota.get':
         return { status: 'ok' };
       case 'settings.get':
@@ -366,7 +389,7 @@ class PhoneConn {
       case 'devices.paired':
         return [{ id: 'demo-phone', name: 'iPhone', createdAt: now() - 30 * day, lastSeen: now() }];
       case 'session.list':
-        return p.project === SHOP ? shopSessions : p.project === HOME ? homeChats : [];
+        return p.project === SHOP ? fresh(shopSessions) : p.project === HOME ? fresh(homeChats) : [];
       case 'session.resumeLast':
         if (p.project === SHOP) return { ...summary('demo-promo'), pending: pending['demo-promo'] };
         return undefined;
