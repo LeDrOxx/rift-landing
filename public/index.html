@@ -3,19 +3,86 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Rift: code on your computer from your phone</title>
-  <meta name="description" content="Rift connects your phone to your Mac or PC. Drive Claude Code running on your computer, use a real terminal and git, and control iOS simulators, Android emulators and web previews from any network, even with the Mac locked." />
+  <title>Rift: Code on your Mac from your phone | Terminal, Git, Simulators</title>
+  <meta name="description" content="Rift lets you run Claude Code on your Mac from your iPhone or Android phone, with a real terminal, git, and live iOS simulators, emulators and web previews." />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+  <link rel="canonical" href="https://riftassistant.com/" />
   <meta name="theme-color" content="#0d0915" />
 
   <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Rift" />
+  <meta property="og:locale" content="en_US" />
   <meta property="og:url" content="https://riftassistant.com/" />
-  <meta property="og:title" content="Rift: code on your computer from your phone" />
-  <meta property="og:description" content="Drive Claude Code on your Mac from your phone: chat, terminal, git, and live simulators, emulators and web previews over your own Tailscale network." />
-  <meta property="og:image" content="https://riftassistant.com/assets/icon.png" />
-  <meta name="twitter:card" content="summary" />
+  <meta property="og:title" content="Rift: Code on your Mac from your phone" />
+  <meta property="og:description" content="Run Claude Code on your Mac from your phone: chat, terminal, git, and live simulators, emulators and web previews over your own Tailscale network." />
+  <meta property="og:image" content="https://riftassistant.com/assets/og.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Rift: code on your Mac from your phone, with chat, terminal, git and live simulators" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Rift: Code on your Mac from your phone" />
+  <meta name="twitter:description" content="Run Claude Code on your Mac from your phone: chat, terminal, git, and live simulators, emulators and web previews over your own Tailscale network." />
+  <meta name="twitter:image" content="https://riftassistant.com/assets/og.png" />
+  <meta name="twitter:image:alt" content="Rift: code on your Mac from your phone, with chat, terminal, git and live simulators" />
 
   <link rel="icon" type="image/svg+xml" href="/assets/icon.svg" />
+  <link rel="icon" type="image/png" sizes="256x256" href="/assets/icon-256.png" />
   <link rel="apple-touch-icon" href="/assets/icon-256.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://riftassistant.com/#org",
+        "name": "Rift",
+        "url": "https://riftassistant.com/",
+        "logo": "https://riftassistant.com/assets/icon.png",
+        "email": "mohamed@riftassistant.com"
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://riftassistant.com/#website",
+        "name": "Rift",
+        "url": "https://riftassistant.com/",
+        "publisher": { "@id": "https://riftassistant.com/#org" }
+      },
+      {
+        "@type": "SoftwareApplication",
+        "@id": "https://riftassistant.com/#app",
+        "name": "Rift",
+        "applicationCategory": "DeveloperApplication",
+        "operatingSystem": "iOS, Android, macOS, Windows",
+        "description": "Rift lets you run Claude Code on your Mac from your iPhone or Android phone, with a real terminal, git, and live iOS simulators, Android emulators and web previews, over your own Tailscale network.",
+        "url": "https://riftassistant.com/",
+        "image": "https://riftassistant.com/assets/icon.png",
+        "publisher": { "@id": "https://riftassistant.com/#org" },
+        "screenshot": [
+          "https://riftassistant.com/assets/screens/chat-approve.jpg",
+          "https://riftassistant.com/assets/screens/terminal.jpg",
+          "https://riftassistant.com/assets/screens/graph.jpg",
+          "https://riftassistant.com/assets/screens/device.jpg",
+          "https://riftassistant.com/assets/screens/browser.jpg",
+          "https://riftassistant.com/assets/screens/home.jpg"
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://riftassistant.com/#faq",
+        "mainEntity": [
+          { "@type": "Question", "name": "Does Rift include Claude?", "acceptedAnswer": { "@type": "Answer", "text": "No. Rift runs Claude Code that you install and set up yourself on your computer, under your own agreement with Anthropic. Rift doesn't sell, include or resell any Claude usage." } },
+          { "@type": "Question", "name": "Does my Mac need to stay unlocked?", "acceptedAnswer": { "@type": "Answer", "text": "No. The screen can lock and the display can sleep. Video comes straight from the simulator or emulator, not from your Mac's screen. The Mac does need to stay awake: plugged in with the lid open, or closed with an external display." } },
+          { "@type": "Question", "name": "Does it work away from home?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Rift connects over Tailscale, so it works on mobile data or any Wi-Fi, as long as your phone and computer are signed in to the same Tailscale account." } },
+          { "@type": "Question", "name": "Can I use it without Claude Code?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Simulators, emulators, web previews, dev servers and git work without it. You only need Claude Code for chat." } },
+          { "@type": "Question", "name": "Does it work on Windows?", "acceptedAnswer": { "@type": "Answer", "text": "Rift Desktop runs on Windows with Android emulators and web previews. iOS simulators need a Mac." } },
+          { "@type": "Question", "name": "When can I get it?", "acceptedAnswer": { "@type": "Answer", "text": "Rift is coming soon to the App Store and Google Play. Email us for early access." } }
+        ]
+      }
+    ]
+  }
+  </script>
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -258,7 +325,7 @@
 
 <header>
   <div class="wrap nav">
-    <a href="#" class="logo"><img src="/assets/icon.svg" alt="" />Rift</a>
+    <a href="/" class="logo"><img src="/assets/icon.svg" alt="" />Rift</a>
     <nav class="nav-links" aria-label="Main">
       <a href="#terminal">Terminal</a>
       <a href="#git">Git</a>
@@ -314,11 +381,11 @@
         <div class="phone">
           <div class="screen">
             <div class="island" aria-hidden="true"></div>
-            <img class="on" data-shot="chat" src="/assets/screens/chat-approve.jpg" width="603" height="1310" alt="Rift chat: Claude finished a change and asks for approval before running a command" />
-            <img data-shot="terminal" src="/assets/screens/terminal.jpg" width="603" height="1310" loading="lazy" alt="Rift terminal running git status and npm test on the Mac" />
-            <img data-shot="git" src="/assets/screens/graph.jpg" width="603" height="1310" loading="lazy" alt="Rift git graph with branches, a merge and a tag" />
-            <img data-shot="device" src="/assets/screens/device.jpg" width="603" height="1310" loading="lazy" alt="Rift Device tab streaming a live Android emulator" />
-            <img data-shot="preview" src="/assets/screens/browser.jpg" width="603" height="1310" loading="lazy" alt="Rift Browser preview of a local dev server at laptop size" />
+            <img class="on" data-shot="chat" src="/assets/screens/chat-approve.jpg" width="603" height="1310" fetchpriority="high" alt="Rift chat: Claude finished a change and asks for approval before running a command" />
+            <img data-shot="terminal" src="/assets/screens/terminal.jpg" width="603" height="1310" loading="lazy" decoding="async" alt="Rift terminal running git status and npm test on the Mac" />
+            <img data-shot="git" src="/assets/screens/graph.jpg" width="603" height="1310" loading="lazy" decoding="async" alt="Rift git graph with branches, a merge and a tag" />
+            <img data-shot="device" src="/assets/screens/device.jpg" width="603" height="1310" loading="lazy" decoding="async" alt="Rift Device tab streaming a live Android emulator" />
+            <img data-shot="preview" src="/assets/screens/browser.jpg" width="603" height="1310" loading="lazy" decoding="async" alt="Rift Browser preview of a local dev server at laptop size" />
           </div>
         </div>
         <p class="cap" id="cap">Claude asks before it runs commands. Approve it from your phone.</p>
@@ -351,7 +418,7 @@
         </ul>
       </div>
       <div class="spot-media">
-        <div class="frame"><img src="/assets/screens/terminal.jpg" width="603" height="1310" loading="lazy" alt="Rift terminal on a phone running git status and npm test on the Mac" /></div>
+        <div class="frame"><img src="/assets/screens/terminal.jpg" width="603" height="1310" loading="lazy" decoding="async" alt="Rift terminal on a phone running git status and npm test on the Mac" /></div>
       </div>
     </div>
   </section>
@@ -379,8 +446,8 @@
         </ul>
       </div>
       <div class="spot-media pair">
-        <div class="frame"><img src="/assets/screens/git-actions.jpg" width="603" height="1310" loading="lazy" alt="Rift commit actions: check out, new branch, new tag, merge, revert, reset, rename and delete" /></div>
-        <div class="frame"><img src="/assets/screens/diff.jpg" width="603" height="1310" loading="lazy" alt="Rift full-file diff with added and removed lines and word-level highlights" /></div>
+        <div class="frame"><img src="/assets/screens/git-actions.jpg" width="603" height="1310" loading="lazy" decoding="async" alt="Rift commit actions: check out, new branch, new tag, merge, revert, reset, rename and delete" /></div>
+        <div class="frame"><img src="/assets/screens/diff.jpg" width="603" height="1310" loading="lazy" decoding="async" alt="Rift full-file diff with added and removed lines and word-level highlights" /></div>
       </div>
     </div>
   </section>
@@ -474,10 +541,10 @@
         <p>Captured from the Rift app running against a real project: real git history, a real dev server and a live emulator.</p>
       </div>
       <div class="shots">
-        <figure class="shot"><img src="/assets/screens/home.jpg" width="603" height="1310" loading="lazy" alt="Rift home screen with the Mac's battery, network, CPU and temperature, plus shortcuts and recent chats" /><figcaption><b>Home</b>Your Mac at a glance, shortcuts and recent chats.</figcaption></figure>
-        <figure class="shot"><img src="/assets/screens/chat-edits.jpg" width="603" height="1310" loading="lazy" alt="Rift chat showing Claude's file edits as inline diffs" /><figcaption><b>Edits as diffs</b>See exactly what Claude changed, line by line.</figcaption></figure>
-        <figure class="shot"><img src="/assets/screens/changes.jpg" width="603" height="1310" loading="lazy" alt="Rift Changes tab listing modified files with lines added and removed" /><figcaption><b>Changes</b>Every file touched, ready to commit.</figcaption></figure>
-        <figure class="shot"><img src="/assets/screens/browser.jpg" width="603" height="1310" loading="lazy" alt="Rift web preview of a local dev server at laptop size" /><figcaption><b>Web preview</b>Your dev server at any screen size.</figcaption></figure>
+        <figure class="shot"><img src="/assets/screens/home.jpg" width="603" height="1310" loading="lazy" decoding="async" alt="Rift home screen with the Mac's battery, network, CPU and temperature, plus shortcuts and recent chats" /><figcaption><b>Home</b>Your Mac at a glance, shortcuts and recent chats.</figcaption></figure>
+        <figure class="shot"><img src="/assets/screens/chat-edits.jpg" width="603" height="1310" loading="lazy" decoding="async" alt="Rift chat showing Claude's file edits as inline diffs" /><figcaption><b>Edits as diffs</b>See exactly what Claude changed, line by line.</figcaption></figure>
+        <figure class="shot"><img src="/assets/screens/changes.jpg" width="603" height="1310" loading="lazy" decoding="async" alt="Rift Changes tab listing modified files with lines added and removed" /><figcaption><b>Changes</b>Every file touched, ready to commit.</figcaption></figure>
+        <figure class="shot"><img src="/assets/screens/browser.jpg" width="603" height="1310" loading="lazy" decoding="async" alt="Rift web preview of a local dev server at laptop size" /><figcaption><b>Web preview</b>Your dev server at any screen size.</figcaption></figure>
       </div>
     </div>
   </section>
